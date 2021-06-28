@@ -25,7 +25,7 @@ public class Reporte implements Serializable {
 	private Long id;
 
 	private String file;
-	private Token conexion;
+	private int conexion;
 	private Date date;
 	private int state;
 	private String description;
@@ -42,10 +42,10 @@ public class Reporte implements Serializable {
 	public void setFile(String file) {
 		this.file = file;
 	}
-	public Token getConexion() {
+	public int getConexion() {
 		return conexion;
 	}
-	public void setConexion(Token conexion) {
+	public void setConexion(int conexion) {
 		this.conexion = conexion;
 	}
 	public Date getDate() {

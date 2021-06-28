@@ -128,7 +128,7 @@ public class HomeController {
 		return "/views/reporte/listar";
 	}
 	
-	@GetMapping("/new/token")
+	@GetMapping("/new/reporte")
 	public String crearReporte(Model model) {
 		
 		Reporte objeto = new Reporte();
@@ -137,7 +137,7 @@ public class HomeController {
 		return "/views/reporte/frmCrear";
 	}
 	
-	@PostMapping("/save/token")
+	@PostMapping("/save/reporte")
 	public String guardarReporte(@ModelAttribute Reporte objeto) {
 		objetoService3.guardar(objeto);
 		System.out.println("datos guardados");
@@ -145,7 +145,7 @@ public class HomeController {
 	}
 	
 
-	@GetMapping("/edit/token/{id}")
+	@GetMapping("/edit/reporte/{id}")
 	public String editarTReporte(@PathVariable("id") Long idObjeto, Model model) {
 		
 		Reporte objeto = objetoService3.buscarPorId(idObjeto);

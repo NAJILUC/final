@@ -28,9 +28,9 @@ public class Token implements Serializable {
 	private String db;
 	private String token;
 	private int puerto;
-	private User user;
+	private int user;
 	private int state;
-	private Typedb type;
+	private int type;
 	public Long getId() {
 		return id;
 	}
@@ -73,10 +73,10 @@ public class Token implements Serializable {
 	public void setPuerto(int puerto) {
 		this.puerto = puerto;
 	}
-	public User getUser() {
+	public int getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+	public void setUser(int user) {
 		this.user = user;
 	}
 	public int getState() {
@@ -85,10 +85,10 @@ public class Token implements Serializable {
 	public void setState(int state) {
 		this.state = state;
 	}
-	public Typedb getType() {
+	public int getType() {
 		return type;
 	}
-	public void setType(Typedb type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 	public static long getSerialversionuid() {

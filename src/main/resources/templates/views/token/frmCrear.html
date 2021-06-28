@@ -17,7 +17,7 @@
 
 			</div>
 			<div class="card-body">
-				<form th:action="@{/save/typedb}" th:object="${objeto}" method="POST">
+				<form th:action="@{/save/token}" th:object="${objeto}" method="POST">
 
 
 					<input type="hidden" th:field="*{id}">
@@ -74,6 +74,22 @@
 
 					</div>
 					
+					<div class="mb-3 row">
+						<label for="tipodocumento" class="form-label col-md-2">Usuario</label>
+						<select th:field="*{user}" class="form-select" aria-label="Default select example">
+							<option th:each="us:${usuarios}" th:value="${us.id}" th:text="${us.usuario}"> </option>
+						</select>
+						<small></small>
+
+					</div>
+					<div class="mb-3 row">
+						<label for="tipodocumento" class="form-label col-md-2">Tipo documento</label>
+						<select th:field="*{type}" class="form-select" aria-label="Default select example">
+							<option th:each="bs:${bases}" th:value="${bs.id}" th:text="${bs.descripcion}"> </option>
+						</select>
+						<small></small>
+
+					</div>
 					
 
 					<div class="card-footer bg-dark">
