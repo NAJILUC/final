@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="plantilla/template :: head">
+
+</head>
+
+<body>
+
+	<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+
+		<h1 th:text="${titulo}"></h1>
+
+		<a class="btn btn-primary btn-sm mb-4" th:href="@{/new/token}" th:text="'Nuevo Objeto'" title="Crear Nuevo Registro"></a>
+		<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout" class="btn btn-warning" />
+</form>
+		<br>
+		<table class="table">
+			<thead class="table-dark">
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Host</th>
+					<th scope="col">Usuario</th>
+					<th scope="col">Clave</th>
+					<th scope="col">DB</th>
+					<th scope="col">Token</th>
+					<th scope="col">Puerto</th>
+					<th scope="col">Usuario</th>
+					<th scope="col">Estado</th>
+					<th scope="col">Tipo de Base</th>
+
+
+
+
+					
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="ob:${objetos}">
+					<td scope="row" th:text="${ob.id}"></td>
+					<td scope="row" th:text="${ob.host}"></td>
+					<td scope="row" th:text="${ob.userdb}"></td>
+					<td scope="row" th:text="${ob.pass}"></td>
+					<td scope="row" th:text="${ob.db}"></td>
+					<td scope="row" th:text="${ob.puerto}"></td>
+					<td scope="row" th:text="${ob.token}"></td>
+					<td scope="row" th:text="${ob.user.usuario}"></td>
+					<td scope="row" th:text="${ob.state}"></td>
+					<td scope="row" th:text="${ob.type.descripcion}"></td>
+					<td scope="row" th:text="${ob.driver}"></td>
+					<td scope="row" th:text="${ob.adicional}"></td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

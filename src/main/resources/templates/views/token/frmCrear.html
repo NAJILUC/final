@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="plantilla/template :: head">
+
+</head>
+
+<body>
+
+	<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+
+		<div class="card bg-light">
+			<div class="card-header bg-dark text-white" th:text="${titulo}">
+
+			</div>
+			<div class="card-body">
+				<form th:action="@{/save/typedb}" th:object="${objeto}" method="POST">
+
+
+					<input type="hidden" th:field="*{id}">
+					<div class="mb-3 row">
+						<label for="nombres" class="form-label col-md-2">Host</label>
+						<input type="text" th:field="*{host}" class="form-control form-control-sm col-md-6"
+							id="nombres" placeholder="Host" required>
+						<small></small>
+
+					</div>
+					<div class="mb-3 row">
+						<label for="apellidos" class="form-label col-md-2">Usuario DB</label>
+						<input type="text" th:field="*{userdb}" class="form-control form-control-sm col-md-6"
+							id="driver" placeholder="Driver" required>
+						<small></small>
+
+					</div>
+					<div class="mb-3 row">
+						<label for="telefono" class="form-label col-md-2">Clave</label>
+						<input type="password" th:field="*{pass}" class="form-control form-control-sm col-md-6"
+							id="telefono" placeholder="Password" required>
+						<small></small>
+
+					</div>
+
+					<div class="mb-3 row">
+						<label for="nombres" class="form-label col-md-2">DB</label>
+						<input type="text" th:field="*{db}" class="form-control form-control-sm col-md-6"
+							id="nombres" placeholder="Base de datos" required>
+						<small></small>
+
+					</div>
+					<div class="mb-3 row">
+						<label for="nombres" class="form-label col-md-2">Token</label>
+						<input type="text" th:field="*{token}" class="form-control form-control-sm col-md-6"
+							id="nombres" placeholder="Token" required>
+						<small></small>
+
+					</div>
+
+					<div class="mb-3 row">
+						<label for="nombres" class="form-label col-md-2">Puerto</label>
+						<input type="text" th:field="*{puerto}" class="form-control form-control-sm col-md-6"
+							id="nombres" placeholder="Puerto" required>
+						<small></small>
+
+					</div>
+					
+					<div class="mb-3 row">
+						<label for="nombres" class="form-label col-md-2">Estado</label>
+						<input type="number" th:field="*{puerto}" class="form-control form-control-sm col-md-6"
+							id="nombres" placeholder="Estado" required>
+						<small></small>
+
+					</div>
+					
+					
+
+					<div class="card-footer bg-dark">
+						<input type="submit" class="btn btn-primary mt-4" value="Guardar">
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

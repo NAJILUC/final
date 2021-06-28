@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="plantilla/template :: head">
+
+</head>
+
+<body>
+
+	<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+
+		<div class="card bg-light">
+			<div class="card-header bg-dark text-white" th:text="${titulo}">
+
+			</div>
+			<div class="card-body">
+				<form th:action="@{/save/typedb}" th:object="${objeto}" method="POST">
+
+
+					<input type="hidden" th:field="*{id}">
+					<div class="mb-3 row">
+						<label for="nombres" class="form-label col-md-2">Descripcion</label>
+						<input type="text" th:field="*{descripcion}" class="form-control form-control-sm col-md-6"
+							id="nombres" placeholder="Descripcion" required>
+						<small></small>
+
+					</div>
+					<div class="mb-3 row">
+						<label for="apellidos" class="form-label col-md-2">Driver</label>
+						<input type="text" th:field="*{driver}" class="form-control form-control-sm col-md-6"
+							id="driver" placeholder="Driver" required>
+						<small></small>
+
+					</div>
+					<div class="mb-3 row">
+						<label for="telefono" class="form-label col-md-2">Adicional</label>
+						<input type="text" th:field="*{adicional}" class="form-control form-control-sm col-md-6"
+							id="telefono" placeholder="Adicional" required>
+						<small></small>
+
+					</div>
+
+
+
+					<div class="card-footer bg-dark">
+						<input type="submit" class="btn btn-primary mt-4" value="Guardar">
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>
