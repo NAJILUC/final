@@ -90,7 +90,7 @@ public class HomeController {
 		List<Typedb> bases = objetoService.listarTodos();
 		List<User> usuarios = objetoService4.listarTodos();
 		Token objeto = new Token();
-		model.addAttribute("titulo","Formulario: Nueva Base de Datos");
+		model.addAttribute("titulo","Formulario: Nuevo Token");
 		model.addAttribute("objeto",objeto);
 		model.addAttribute("bases",bases);
 		model.addAttribute("usuarios",usuarios);
